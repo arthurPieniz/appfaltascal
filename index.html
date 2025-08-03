@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Faltas CTBMPA</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="shortcut icon" href="ctbmLOGO.png" type="image/x-icon">
+    
+    <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');</style>
+
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+
+</head>
+
+
+<body>
+    
+    
+    <header>
+        <h1>Controle de Faltas CTBMPA</h1>
+    </header>
+    
+    
+
+
+
+
+<!-- TELA INICIO -->
+
+
+
+
+    <div class="telainicio">
+        
+        <button id="cadastrarbtn">CADASTRAR FALTAS</button>
+        <button id="faltasdiabtn">VIZUALIZAR DE FALTAS DO DIA</button>
+        <button id="faltasalunobtn">VIZUALIZAR FALTAS DE ALUNO</button>
+        <button id="admcadastro">ADMINISTRAR CADASTROS</button>
+    
+    </div>
+
+    
+
+
+
+<!-- CADASTRAR FALTAS -->
+
+
+
+
+
+
+
+    <div class="cadastrar">
+        <p>Escolha o aluno</p>
+        <select name="" id="name">
+            <optgroup label="Turma 11">
+                
+            </optgroup>
+            
+            <optgroup label="Turma 12">
+
+            </optgroup>
+            
+            <optgroup label="Turma 13">
+
+            </optgroup>
+            
+            <optgroup label="Turma 14">
+
+            </optgroup>
+            
+            <optgroup label="Turma 21">
+
+            </optgroup>
+            
+            <optgroup label="Turma 22">
+
+            </optgroup>
+            
+            <optgroup label="Turma 23">
+
+            </optgroup>
+            
+            <optgroup label="Turma 31">
+
+            </optgroup>
+            
+            <optgroup label="Turma 32">
+
+            </optgroup>
+
+        </select>
+        <!-- <input type="number" id="turma" placeholder="Turma do aluno" autocomplete="off">
+        <input type="number" id="cal" placeholder="Numero de cal do aluno" autocomplete="off"> -->
+        <!-- disabled = "on" para deixar sem ineditavel -->
+        <p>Data da falta</p>
+        <input type="date" id="data">
+        <!-- ano-mes-dia -> ex: "2025-05-13" -->
+        
+        <div class="faljus">
+            <p>Falta já justificada?</p>
+            <input type="checkbox" id="justificada">
+        </div>
+
+        <div class="falmanha">
+            <p>Falta ocorreu de manhã?</p>
+            <input type="checkbox" id="manha">
+        </div>
+
+        <div class="faltarde">
+            <p>Falta ocorreu de tarde?</p>
+            <input type="checkbox" id="tarde">
+        </div>
+    
+        <button id="sendfaltas">Enviar</button>
+        <div class="voltardiv">
+            <a href="index.html">voltar</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<!-- Vizualizar FALTAS DO DIA -->
+
+
+
+
+
+
+
+    <div class="faltasdia">
+        <div class="escolherdia">
+            <input type="date"  id="inpdia">
+
+            <button id="verfaltasdiabtn">Vizualizar</button>
+
+            <div class="voltardiv">
+                <a href="index.html">voltar</a>
+            </div>
+        </div>
+    
+        <div class="verfaltasdia">
+            <h2 id="dataespecifica">Data: </h2>
+            <br>
+
+            <section>
+                <h2>Turma 11</h2>
+                <div class="line"> </div>
+                <p id="turma11"> </p>
+                <br>
+
+                <h2>Turma 12</h2>
+                <div class="line"> </div>
+                <p id="turma12"> </p>
+                <br>
+
+                <h2>Turma 13</h2>
+                <div class="line"> </div>
+                <p id="turma13"> </p>
+                <br>
+
+                <h2>Turma 14</h2>
+                <div class="line"> </div>
+                <p id="turma14"> </p>
+                <br>
+
+                <h2>Turma 21</h2>
+                <div class="line"> </div>
+                <p id="turma21"> </p>
+                <br>
+
+                <h2>Turma 22</h2>
+                <div class="line"> </div>
+                <p id="turma22"> </p>
+                <br>
+
+                <h2>Turma 23</h2>
+                <div class="line"> </div>
+                <p id="turma23"> </p>
+                <br>
+
+                <h2>Turma 31</h2>
+                <div class="line"> </div>
+                <p id="turma31"> </p>
+                <br>
+
+                <h2>Turma 32</h2>
+                <div class="line"> </div>
+                <p id="turma32"> </p>
+                <br>
+
+            </section>
+        
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<!-- Vizualizar FALTAS DO ALUNO -->
+
+
+
+
+
+
+
+    <div class="faltasaluno">
+        
+        <div class="escolheraluno">
+            
+            <p>Escolha o aluno</p>
+            <select name="" id="inpaluno">
+                <optgroup label="Turma 11" id="t11">
+                    
+                </optgroup>
+                
+                <optgroup label="Turma 12" id="t12">
+
+                </optgroup>
+                
+                <optgroup label="Turma 13" id="t13">
+
+                </optgroup>
+                
+                <optgroup label="Turma 14" id="t14">
+
+                </optgroup>
+                
+                <optgroup label="Turma 21" id="t21">
+
+                </optgroup>
+                
+                <optgroup label="Turma 22" id="t22">
+
+                </optgroup>
+                
+                <optgroup label="Turma 23" id="t23">
+
+                </optgroup>
+                
+                <optgroup label="Turma 31" id="t31">
+
+                </optgroup>
+                
+                <optgroup label="Turma 32" id="t32">
+
+                </optgroup>
+
+            </select>
+
+
+            <button id="verfaltasalunobtn">Vizualizar</button>
+
+            <div class="voltardiv">
+                <a href="index.html">voltar</a>
+            </div>
+        </div>
+    
+        <div class="verfaltasaluno">
+
+            <section id="faltasalunosection">
+                <h2 id="nomeExibido">Nome do aluno</h2>
+                <h3 id="turmaExibida">Turma do aluno</h3>
+                <h3 id="calExibido">Número no CAl do aluno</h3>
+                <h3 id="faltasTotais">f</h3>
+                <br>
+                
+            </section>
+
+        </div>
+    
+    </div>
+
+
+
+
+
+
+
+<!-- Administrar CADASTROS -->
+
+
+
+
+
+
+
+    <div class="admcadastar">
+        <h2>Cadastrar Aluno</h2>
+        <input type="text" placeholder="Nome do Aluno" id="cadastrarname" autocomplete="off">
+        <input type="number" placeholder="Turma do Aluno" id="cadastrarturma">
+        <input type="number" placeholder="Numero de CAl do Aluno" id="cadastrarcal">
+        <button id="cadastraraluno">Enviar</button>
+        <button id="excluirfaltas">EXCLUIR TODAS AS FALTAS</button>
+        <button id="excluiralunos">EXCLUIR TODOS OS ALUNOS CADASTRADOS</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+<script src="script.js"></script>
+</html>

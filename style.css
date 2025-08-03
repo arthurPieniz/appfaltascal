@@ -1,0 +1,229 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+header{
+    text-align: center;
+    padding: 20px;
+}
+
+h1{
+    cursor: pointer;
+}
+
+.telainicio{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    width: 30%;
+    min-width: 320px;
+    max-width: 1200px;
+}
+
+.telainicio button{
+    margin-top: 20px;
+    width: 80%;
+    padding: 8px;
+    font-size: 13pt;
+}
+
+.cadastrar{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: left;
+    width: 30%;
+    min-width: 320px;
+    max-width: 1200px;
+}
+
+.cadastrar select{
+    width: 100%;
+    border: 1px solid black;
+    padding: 8px 12px;
+    font-size: 13pt;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+
+.cadastrar input,
+.faltasdia .escolherdia input, 
+.faltasaluno .escolheraluno input{
+    width: 100%;
+    border: 1px solid black;
+    padding: 8px 12px;
+    font-size: 13pt;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.cadastrar p{
+    font-size: 13pt;
+    margin-bottom: 5px;
+}
+
+.cadastrar .faljus,
+.cadastrar .falmanha,
+.cadastrar .faltarde
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+
+}
+
+.cadastrar .faljus input,
+.cadastrar .falmanha input,
+.cadastrar .faltarde input
+{
+    width: 20px;
+    height: 20px;
+    margin-top: 10px;
+}
+
+
+.cadastrar button,
+.faltasdia .escolherdia button, 
+.faltasaluno .escolheraluno button{
+    margin-top: 10px;
+    font-size: 13pt;
+    padding: 10px;
+    width: 100%;
+}
+
+.voltardiv{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.faltasdia, .faltasaluno{
+    width: 100%;
+}
+
+.faltasdia .escolherdia, .faltasaluno .escolheraluno{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: left;
+    width: 30%;
+    min-width: 320px;
+    max-width: 1200px;
+}
+
+.verfaltasdia{
+    padding: 20px;
+}
+
+.verfaltasdia h2,
+.verfaltasaluno h2{
+    font-size: 21pt;
+}
+
+.verfaltasdia p,
+.verfaltasaluno p{
+    font-size: 16pt;
+}
+
+.verfaltasdia .line{
+    background-color: black;
+    height: 1px;
+    
+}
+
+.verfaltasaluno{
+    padding: 20px;
+}
+
+.verfaltasaluno section div{
+    display: flex;
+}
+
+.verfaltasaluno h3{
+    font-size: 17pt;
+}
+
+.verfaltasaluno section input{
+    width: 20px;
+    height: 20px;
+    margin: 3px 20px;
+}
+
+.admcadastrar{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    width: 30%;
+    min-width: 320px;
+    max-width: 1200px;
+}
+
+.admcadastrar h2{
+    font-size: 21pt;
+    margin-bottom: 10px;
+}
+
+.admcadastrar input{
+    width: 100%;
+    border: 1px solid black;
+    padding: 8px 12px;
+    font-size: 13pt;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+.admcadastrar button{
+    margin-top: 5px;
+    width: 100%;
+    padding: 8px;
+    font-size: 13pt;
+}
+
+.admcadastrar button#excluirfaltas{
+    margin-top: 40px;
+}
+
+#excluirBtn{
+    font-size: 13pt;
+    background-color: red;
+    border: 0px;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.none{
+    display: none;
+}
